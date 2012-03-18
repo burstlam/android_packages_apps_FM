@@ -680,13 +680,14 @@ public class FmSharedPreferences {
             case REGIONAL_BAND_NORTH_AMERICA: {
                 // NORTH_AMERICA 87500 TO 108000 IN 200 KHZ STEPS
                 mFMConfiguration.setRadioBand(FmReceiver.FM_US_BAND);
-                mFMConfiguration.setChSpacing(FmReceiver.FM_CHSPACE_200_KHZ);
+                mFMConfiguration.setChSpacing(FmReceiver.FM_CHSPACE_50_KHZ);
                 mFMConfiguration.setEmphasis(FmReceiver.FM_DE_EMP75);
                 mFMConfiguration.setRdsStd(FmReceiver.FM_RDS_STD_RBDS);
                 /*
                  * Since the step size if 200K starting at 87500, 107900 is the
                  * maximum
                  */
+		mFMConfiguration.setLowerLimit(87500);
                 mFMConfiguration.setUpperLimit(107900);
                 break;
             }
@@ -737,7 +738,16 @@ public class FmSharedPreferences {
             }
             case REGIONAL_BAND_CHINA: {// - CHINA 87000 TO 108000 IN 100 KHZ
                                        // STEPS
+                 mFMConfiguration.setRadioBand(FmReceiver.FM_US_BAND);
+                 mFMConfiguration.setChSpacing(FmReceiver.FM_CHSPACE_100_KHZ);
+                 mFMConfiguration.setEmphasis(FmReceiver.FM_DE_EMP75);
+                 mFMConfiguration.setRdsStd(FmReceiver.FM_RDS_STD_RBDS);
+                 /*
+                  * Since the step size if 200K starting at 87500, 107900 is the
+                  * maximum
+                  */
                 mFMConfiguration.setLowerLimit(87000);
+		mFMConfiguration.setUpperLimit(107900);
                 break;
             }
             case REGIONAL_BAND_CZECH: {// - CZECH 87500 TO 108000 IN 100 KHZ
@@ -765,6 +775,16 @@ public class FmSharedPreferences {
             }
             case REGIONAL_BAND_HONGKONG: {// - HONG KONG 87500 TO 108000 IN 100
                                           // KHZ STEPS
+                mFMConfiguration.setRadioBand(FmReceiver.FM_US_BAND);
+                mFMConfiguration.setChSpacing(FmReceiver.FM_CHSPACE_100_KHZ);
+                mFMConfiguration.setEmphasis(FmReceiver.FM_DE_EMP75);
+                mFMConfiguration.setRdsStd(FmReceiver.FM_RDS_STD_RBDS);
+                /*
+                 * Since the step size if 200K starting at 87500, 107900 is the
+                 * maximum
+                 */
+                mFMConfiguration.setLowerLimit(87500);
+                mFMConfiguration.setUpperLimit(107900);
                 break;
             }
             case REGIONAL_BAND_INDIA: {// - INDIA 91000 TO 106400 IN 100 KHZ
